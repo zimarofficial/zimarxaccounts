@@ -31,66 +31,46 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:12px 20px;
+flex-wrap:wrap;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 }
 
-.logo img{height:55px}
+.logo img{height:50px}
 
 nav a{
 text-decoration:none;
 color:#2563eb;
-margin-left:16px;
+margin:6px 10px;
 font-weight:bold;
+font-size:14px;
 }
 
 /* HERO */
 .hero{
-padding:90px 20px;
+padding:70px 20px;
 text-align:center;
 background:linear-gradient(135deg,#eaf4ff,#ffffff);
-overflow:hidden;
 }
 
 .hero h1{
-font-size:48px;
+font-size:clamp(26px,5vw,48px);
 margin:10px 0;
 }
 
 .hero p{
-font-size:20px;
-}
-
-/* ANIMATION */
-.marquee{
-white-space:nowrap;
-overflow:hidden;
-width:100%;
-margin-bottom:15px;
-}
-
-.marquee span{
-display:inline-block;
-padding-left:100%;
-animation:move 18s linear infinite;
-font-weight:bold;
-color:#2563eb;
-}
-
-@keyframes move{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
+font-size:clamp(14px,3.5vw,20px);
 }
 
 /* STATS */
 .stats{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:10px;
 flex-wrap:wrap;
 margin-top:20px;
 }
@@ -98,41 +78,40 @@ margin-top:20px;
 .badge{
 background:#2563eb;
 color:white;
-padding:10px 16px;
+padding:8px 14px;
 border-radius:30px;
 font-weight:bold;
+font-size:13px;
 }
 
 /* SECTION */
 .section{
 max-width:1200px;
 margin:auto;
-padding:60px 20px;
+padding:50px 15px;
 text-align:center;
 }
-
-.light{background:#eaf4ff}
 
 /* GRID */
 .cardgrid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
 
 /* CARD */
 .card{
 background:white;
-border-radius:16px;
-padding:24px;
+border-radius:14px;
+padding:20px;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-/* VIDEOS */
+/* VIDEO SECTION FIX */
 .videos{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:15px;
 }
 
 .video-card{
@@ -140,11 +119,18 @@ background:white;
 border-radius:14px;
 overflow:hidden;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
 }
 
-iframe{
+.video-thumb{
 width:100%;
 height:200px;
+}
+
+.video-thumb iframe{
+width:100%;
+height:100%;
 border:none;
 }
 
@@ -155,27 +141,29 @@ text-align:left;
 
 .watch-btn{
 display:inline-block;
-margin-top:8px;
-padding:8px 14px;
+margin-top:6px;
+padding:8px 12px;
 background:#2563eb;
 color:white;
-border-radius:8px;
+border-radius:6px;
 text-decoration:none;
-font-size:14px;
+font-size:13px;
+border:none;
+cursor:pointer;
 }
 
 /* LECTURER */
 .lecturer{
 display:flex;
 justify-content:center;
-padding:60px 20px;
+padding:50px 15px;
 }
 
 .lect-card{
 display:flex;
-gap:25px;
+gap:20px;
 align-items:flex-start;
-max-width:850px;
+max-width:900px;
 }
 
 .lect-card img{
@@ -186,35 +174,58 @@ border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
 
+/* FORM */
+form input, form textarea{
+width:100%;
+padding:10px;
+margin:6px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
 /* FOOTER */
 footer{
 text-align:center;
-padding:25px;
+padding:20px;
 background:#111827;
 color:white;
 }
 
 footer a{
 color:white;
-margin:0 10px;
+margin:5px 8px;
 text-decoration:none;
+font-size:13px;
 }
 
 /* FLOAT */
 .float{
 position:fixed;
-right:20px;
-bottom:20px;
+right:15px;
+bottom:15px;
 background:#25D366;
 color:white;
-width:60px;
-height:60px;
+width:55px;
+height:55px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
+font-size:26px;
 text-decoration:none;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+.lect-card{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+.lect-card img{
+width:90%;
+height:auto;
+}
 }
 
 </style>
@@ -232,9 +243,10 @@ text-decoration:none;
 
 <div>
 <a href="#home">Home</a>
-<a href="#recordings">Recordings</a>
 <a href="#classes">Classes</a>
+<a href="#recordings">Recordings</a>
 <a href="#lecturer">Lecturer</a>
+<a href="#admission">Admission</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -242,10 +254,6 @@ text-decoration:none;
 
 <!-- HERO -->
 <section class="hero" id="home">
-
-<div class="marquee">
-<span>🔥 Welcome to the most trustable online accounting classes | 📚 60+ Students | 🎓 50+ Sessions | 💯 Exam Focused Teaching</span>
-</div>
 
 <h1>ZIMAR x ACCOUNTS - TAMIL</h1>
 <p>Advance Level Tamil Medium Accounting Classes</p>
@@ -258,69 +266,32 @@ text-decoration:none;
 
 </section>
 
-<!-- 🔥 ADDED SECTION (MISSING ONE FIXED) -->
+<!-- ABOUT -->
 <section class="section">
-
-<h2>🎓 நீங்கள் உயர்தரத்தில் வணிகப்பிரிவில் கணக்கீட்டு பாடத்தினை தெரிவு செய்த மாணவரா?</h2>
-
-<p>
-அப்படியானால் இது உங்களுக்கு ஒரு சிறந்த வாய்ப்பு. கணக்கீட்டு பாடத்தில் உள்ள அனைத்து தேர்ச்சிகளையும் சிறந்த முறையில் கற்பித்து உங்களை பரீட்சைக்கு சிறந்த முறையில் தயார்படுத்த நாம் தயார்.
-எம்மோடு இணைந்து கொண்டு உங்களின் சிறந்த பெறுபேற்றினை உறுதிப்படுத்திக் கொள்ளுங்கள்.
-</p>
-
-<div class="cardgrid" style="margin-top:30px;">
-
-<div class="card">
-<h3>📘 Tamil Medium Teaching</h3>
-<p>Clear step-by-step explanation in Tamil for better understanding.</p>
-</div>
-
-<div class="card">
-<h3>🎯 Exam Focused</h3>
-<p>Past papers, model questions and exam techniques.</p>
-</div>
-
-<div class="card">
-<h3>📈 Performance Growth</h3>
-<p>Structured learning system to improve marks quickly.</p>
-</div>
-
-</div>
-
+<h2>🎓 Why Choose Us?</h2>
+<p>Best structured A/L Accounting Tamil Medium classes with exam focused teaching.</p>
 </section>
 
 <!-- CLASSES -->
-<section class="section light" id="classes">
-<h2>📘 Classes Overview</h2>
-
+<section class="section" id="classes">
+<h2>📘 Classes</h2>
 <div class="cardgrid">
-
-<div class="card">
-<h3>📚 Theory Classes</h3>
-<p>Step-by-step Tamil explanation for all units.</p>
-</div>
-
-<div class="card">
-<h3>📝 Model Papers</h3>
-<p>Past paper discussions and exam preparation.</p>
-</div>
-
-<div class="card">
-<h3>🎯 Revision</h3>
-<p>Fast revision sessions before exams.</p>
-</div>
-
+<div class="card">Theory Classes</div>
+<div class="card">Model Papers</div>
+<div class="card">Revision Sessions</div>
 </div>
 </section>
 
-<!-- RECORDINGS -->
+<!-- RECORDINGS FIXED -->
 <section class="section" id="recordings">
 <h2>📺 Recordings</h2>
 
 <div class="videos">
 
 <div class="video-card">
+<div class="video-thumb">
 <iframe src="https://www.youtube.com/embed/OVhBwSa5O60"></iframe>
+</div>
 <div class="video-info">
 <h4>Session 01</h4>
 <a class="watch-btn" href="https://www.youtube.com/watch?v=OVhBwSa5O60" target="_blank">▶ Watch Now</a>
@@ -328,22 +299,17 @@ text-decoration:none;
 </div>
 
 <div class="video-card">
+<div class="video-thumb">
 <iframe src="https://www.youtube.com/embed/r34xdzHNAgs"></iframe>
+</div>
 <div class="video-info">
 <h4>Session 02</h4>
 <a class="watch-btn" href="https://www.youtube.com/watch?v=r34xdzHNAgs" target="_blank">▶ Watch Now</a>
 </div>
 </div>
 
-<div class="video-card">
-<iframe src="https://www.youtube.com/embed/V01MgFYlB2Q"></iframe>
-<div class="video-info">
-<h4>Session 03</h4>
-<a class="watch-btn" href="https://www.youtube.com/watch?v=V01MgFYlB2Q" target="_blank">▶ Watch Now</a>
-</div>
 </div>
 
-</div>
 </section>
 
 <!-- LECTURER -->
@@ -355,102 +321,86 @@ text-decoration:none;
 
 <div>
 <h2>MOHAMMETHU ZIMAR</h2>
-<p>Lecturer – A/L Accounting</p>
+<p>Founder & Lecturer</p>
 
 <hr>
 
-<h3>🎓 Qualifications</h3>
-<p>• 2024 A/L Ampara District Rank 24</p>
+<p>• 2024 Rank 24</p>
 <p>• 3 Years Experience</p>
-<p>• BSc (Hons) BIS – University of Sri Jayewardenepura</p>
-<p>• AAT Qualified</p>
+<p>• BIS Degree</p>
 
 </div>
 
 </div>
 
 </section>
-<!-- CONTACT -->
-<section class="section" id="contact">
 
-<h2>📞 Contact Us</h2>
-
-<div class="cardgrid">
-
-<div class="card">
-<h3>📱 WhatsApp</h3>
-<p>Join our support group or contact admin</p>
-<a class="watch-btn" href="https://chat.whatsapp.com/IeXijrdITNM3JcZtlKkaeb?mode=gi_t">Join Group</a>
-</div>
-
-<div class="card">
-<h3>📞 Phone</h3>
-<p>+94 76 72 73 183 </p>
-<p>Call for class details & support</p>
-</div>
-
-<div class="card">
-<h3>📧 Email</h3>
-<p>mhmdzimarofficial@gmail.com</p>
-<p>For official inquiries</p>
-</div>
-
-</div>
-
-</section>
-  <!-- ADMISSION FORM -->
+<!-- ADMISSION -->
 <section class="section" id="admission">
 
 <h2>📝 Admission Form</h2>
 
-<div class="card" style="max-width:700px;margin:auto;text-align:left;">
+<div class="card" style="max-width:600px;margin:auto;text-align:left;">
 
-<form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+<input type="text" id="name" placeholder="Student Name">
+<input type="text" id="school" placeholder="School">
+<input type="text" id="grade" placeholder="Grade / Year">
+<input type="tel" id="phone" placeholder="Phone Number">
+<textarea id="message" placeholder="Message"></textarea>
 
-<label>Student Name</label><br>
-<input type="text" name="name" required style="width:100%;padding:10px;margin:8px 0;"><br>
-
-<label>School</label><br>
-<input type="text" name="school" required style="width:100%;padding:10px;margin:8px 0;"><br>
-
-<label>Grade / A/L Year</label><br>
-<input type="text" name="grade" required style="width:100%;padding:10px;margin:8px 0;"><br>
-
-<label>Phone Number</label><br>
-<input type="tel" name="phone" required style="width:100%;padding:10px;margin:8px 0;"><br>
-
-<label>Message</label><br>
-<textarea name="message" rows="4" style="width:100%;padding:10px;margin:8px 0;"></textarea><br>
-
-<!-- IMPORTANT SETTINGS -->
-<input type="hidden" name="_captcha" value="false">
-
-<button type="submit" class="watch-btn" style="border:none;cursor:pointer;">
-Submit Application
-</button>
-
-</form>
+<button class="watch-btn" onclick="sendWhatsApp()">Submit Application</button>
 
 </div>
 
 </section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+
+<h2>📞 Contact</h2>
+<p>WhatsApp: +94 76 72 73 183</p>
+<p>Email: mhmdzimarofficial@gmail.com</p>
+
+</section>
+
 <!-- FOOTER -->
 <footer>
 
 <p>© 2026 ZIMAR x ACCOUNTS</p>
 
-<div>
 <a href="#home">Home</a>
-<a href="#recordings">Recordings</a>
 <a href="#classes">Classes</a>
-<a href="#lecturer">Lecturer</a>
-<a href="#contact">Contact</a>
-</div>
+<a href="#recordings">Recordings</a>
+<a href="#admission">Admission</a>
 
 </footer>
 
-<!-- WHATSAPP -->
-<a class="float" href="https://chat.whatsapp.com/IeXijrdITNM3JcZtlKkaeb?mode=gi_t">💬</a>
+<!-- FLOAT -->
+<a class="float" href="https://wa.me/9477XXXXXXX">💬</a>
+
+<!-- SCRIPT -->
+<script>
+function sendWhatsApp(){
+let name=document.getElementById("name").value;
+let school=document.getElementById("school").value;
+let grade=document.getElementById("grade").value;
+let phone=document.getElementById("phone").value;
+let message=document.getElementById("message").value;
+
+let text =
+`📚 Admission Request
+
+👤 Name: ${name}
+🏫 School: ${school}
+🎓 Grade: ${grade}
+📞 Phone: ${phone}
+📝 Message: ${message}`;
+
+let url="https://wa.me/94767273183?text="+encodeURIComponent(text);
+
+window.open(url,"_blank");
+}
+</script>
 
 </body>
 </html>
