@@ -66,6 +66,27 @@ margin:10px 0;
 font-size:clamp(14px,3.5vw,20px);
 }
 
+/* ANIMATION */
+.marquee{
+white-space:nowrap;
+overflow:hidden;
+width:100%;
+margin-bottom:15px;
+}
+
+.marquee span{
+display:inline-block;
+padding-left:100%;
+animation:move 18s linear infinite;
+font-weight:bold;
+color:#2563eb;
+}
+
+@keyframes move{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
 /* STATS */
 .stats{
 display:flex;
@@ -107,7 +128,7 @@ padding:20px;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-/* VIDEO SECTION FIX */
+/* VIDEOS */
 .videos{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -116,26 +137,19 @@ gap:15px;
 
 .video-card{
 background:white;
-border-radius:14px;
+border-radius:12px;
 overflow:hidden;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
-display:flex;
-flex-direction:column;
 }
 
-.video-thumb{
+iframe{
 width:100%;
-height:200px;
-}
-
-.video-thumb iframe{
-width:100%;
-height:100%;
+height:190px;
 border:none;
 }
 
 .video-info{
-padding:12px;
+padding:10px;
 text-align:left;
 }
 
@@ -183,7 +197,6 @@ border:1px solid #ccc;
 border-radius:6px;
 }
 
-/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
@@ -243,8 +256,8 @@ height:auto;
 
 <div>
 <a href="#home">Home</a>
-<a href="#classes">Classes</a>
 <a href="#recordings">Recordings</a>
+<a href="#classes">Classes</a>
 <a href="#lecturer">Lecturer</a>
 <a href="#admission">Admission</a>
 <a href="#contact">Contact</a>
@@ -254,6 +267,10 @@ height:auto;
 
 <!-- HERO -->
 <section class="hero" id="home">
+
+<div class="marquee">
+<span>🔥 Welcome to ZIMAR Accounting Classes | 📚 60+ Students | 🎓 50+ Sessions | 💯 Exam Focused Teaching</span>
+</div>
 
 <h1>ZIMAR x ACCOUNTS - TAMIL</h1>
 <p>Advance Level Tamil Medium Accounting Classes</p>
@@ -269,47 +286,40 @@ height:auto;
 <!-- ABOUT -->
 <section class="section">
 <h2>🎓 Why Choose Us?</h2>
-<p>Best structured A/L Accounting Tamil Medium classes with exam focused teaching.</p>
+<p>Best A/L Accounting Tamil Medium Classes with exam focused teaching.</p>
 </section>
 
 <!-- CLASSES -->
 <section class="section" id="classes">
 <h2>📘 Classes</h2>
 <div class="cardgrid">
-<div class="card">Theory Classes</div>
+<div class="card">Theory</div>
 <div class="card">Model Papers</div>
-<div class="card">Revision Sessions</div>
+<div class="card">Revision</div>
 </div>
 </section>
 
-<!-- RECORDINGS FIXED -->
+<!-- RECORDINGS -->
 <section class="section" id="recordings">
 <h2>📺 Recordings</h2>
 
 <div class="videos">
 
 <div class="video-card">
-<div class="video-thumb">
 <iframe src="https://www.youtube.com/embed/OVhBwSa5O60"></iframe>
-</div>
 <div class="video-info">
 <h4>Session 01</h4>
-<a class="watch-btn" href="https://www.youtube.com/watch?v=OVhBwSa5O60" target="_blank">▶ Watch Now</a>
 </div>
 </div>
 
 <div class="video-card">
-<div class="video-thumb">
 <iframe src="https://www.youtube.com/embed/r34xdzHNAgs"></iframe>
-</div>
 <div class="video-info">
 <h4>Session 02</h4>
-<a class="watch-btn" href="https://www.youtube.com/watch?v=r34xdzHNAgs" target="_blank">▶ Watch Now</a>
 </div>
 </div>
 
 </div>
-
 </section>
 
 <!-- LECTURER -->
@@ -317,7 +327,7 @@ height:auto;
 
 <div class="lect-card">
 
-<img src="lecture.jpg">
+<img src="lecturer.jpg">
 
 <div>
 <h2>MOHAMMETHU ZIMAR</h2>
@@ -328,14 +338,13 @@ height:auto;
 <p>• 2024 Rank 24</p>
 <p>• 3 Years Experience</p>
 <p>• BIS Degree</p>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- ADMISSION -->
+<!-- ADMISSION FORM -->
 <section class="section" id="admission">
 
 <h2>📝 Admission Form</h2>
@@ -358,8 +367,8 @@ height:auto;
 <section class="section" id="contact">
 
 <h2>📞 Contact</h2>
-<p>WhatsApp: +94 76 72 73 183</p>
-<p>Email: mhmdzimarofficial@gmail.com</p>
+<p>WhatsApp: +94 77 XXXXXXX</p>
+<p>Email: zimar@gmail.com</p>
 
 </section>
 
@@ -375,7 +384,7 @@ height:auto;
 
 </footer>
 
-<!-- FLOAT -->
+<!-- WHATSAPP FLOAT -->
 <a class="float" href="https://wa.me/9477XXXXXXX">💬</a>
 
 <!-- SCRIPT -->
@@ -396,7 +405,7 @@ let text =
 📞 Phone: ${phone}
 📝 Message: ${message}`;
 
-let url="https://wa.me/94767273183?text="+encodeURIComponent(text);
+let url="https://wa.me/9477XXXXXXX?text="+encodeURIComponent(text);
 
 window.open(url,"_blank");
 }
