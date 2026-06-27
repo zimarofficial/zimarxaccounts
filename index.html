@@ -31,39 +31,38 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:12px 20px;
-flex-wrap:wrap;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
-.logo img{height:50px}
+.logo img{height:55px}
 
 nav a{
 text-decoration:none;
 color:#2563eb;
-margin:6px 10px;
+margin-left:16px;
 font-weight:bold;
-font-size:14px;
 }
 
 /* HERO */
 .hero{
-padding:70px 20px;
+padding:90px 20px;
 text-align:center;
 background:linear-gradient(135deg,#eaf4ff,#ffffff);
+overflow:hidden;
 }
 
 .hero h1{
-font-size:clamp(26px,5vw,48px);
+font-size:48px;
 margin:10px 0;
 }
 
 .hero p{
-font-size:clamp(14px,3.5vw,20px);
+font-size:20px;
 }
 
 /* ANIMATION */
@@ -91,7 +90,7 @@ color:#2563eb;
 .stats{
 display:flex;
 justify-content:center;
-gap:10px;
+gap:15px;
 flex-wrap:wrap;
 margin-top:20px;
 }
@@ -99,86 +98,86 @@ margin-top:20px;
 .badge{
 background:#2563eb;
 color:white;
-padding:8px 14px;
+padding:10px 16px;
 border-radius:30px;
 font-weight:bold;
-font-size:13px;
 }
 
 /* SECTION */
 .section{
 max-width:1200px;
 margin:auto;
-padding:50px 15px;
+padding:60px 20px;
 text-align:center;
 }
+
+.light{background:#eaf4ff}
 
 /* GRID */
 .cardgrid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 /* CARD */
 .card{
 background:white;
-border-radius:14px;
-padding:20px;
+border-radius:16px;
+padding:24px;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 /* VIDEOS */
 .videos{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
 }
 
 .video-card{
 background:white;
-border-radius:12px;
+border-radius:14px;
 overflow:hidden;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 iframe{
 width:100%;
-height:190px;
+height:200px;
 border:none;
 }
 
 .video-info{
-padding:10px;
+padding:12px;
 text-align:left;
 }
 
 .watch-btn{
 display:inline-block;
-margin-top:6px;
-padding:8px 12px;
+margin-top:8px;
+padding:8px 14px;
 background:#2563eb;
 color:white;
-border-radius:6px;
+border-radius:8px;
 text-decoration:none;
-font-size:13px;
+font-size:14px;
 }
 
 /* LECTURER */
 .lecturer{
 display:flex;
 justify-content:center;
-padding:50px 15px;
+padding:60px 20px;
 }
 
 .lect-card{
 display:flex;
-gap:20px;
+gap:25px;
 align-items:flex-start;
-max-width:900px;
+max-width:850px;
 }
 
-/* IMAGE */
 .lect-card img{
 width:240px;
 height:300px;
@@ -190,64 +189,32 @@ box-shadow:0 4px 12px rgba(0,0,0,.2);
 /* FOOTER */
 footer{
 text-align:center;
-padding:20px;
+padding:25px;
 background:#111827;
 color:white;
 }
 
 footer a{
 color:white;
-margin:5px 8px;
+margin:0 10px;
 text-decoration:none;
-font-size:13px;
 }
 
 /* FLOAT */
 .float{
 position:fixed;
-right:15px;
-bottom:15px;
+right:20px;
+bottom:20px;
 background:#25D366;
 color:white;
-width:55px;
-height:55px;
+width:60px;
+height:60px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:26px;
+font-size:28px;
 text-decoration:none;
-}
-
-/* 🔥 MOBILE RESPONSIVE */
-@media (max-width:768px){
-
-nav{
-justify-content:center;
-text-align:center;
-}
-
-nav a{
-margin:5px;
-font-size:13px;
-}
-
-.lect-card{
-flex-direction:column;
-align-items:center;
-text-align:center;
-}
-
-.lect-card img{
-width:90%;
-height:auto;
-max-height:350px;
-}
-
-.video-info{
-text-align:center;
-}
-
 }
 
 </style>
@@ -291,43 +258,63 @@ text-align:center;
 
 </section>
 
-<!-- ABOUT -->
+<!-- 🔥 ADDED SECTION (MISSING ONE FIXED) -->
 <section class="section">
 
 <h2>🎓 நீங்கள் உயர்தரத்தில் வணிகப்பிரிவில் கணக்கீட்டு பாடத்தினை தெரிவு செய்த மாணவரா?</h2>
 
 <p>
 அப்படியானால் இது உங்களுக்கு ஒரு சிறந்த வாய்ப்பு. கணக்கீட்டு பாடத்தில் உள்ள அனைத்து தேர்ச்சிகளையும் சிறந்த முறையில் கற்பித்து உங்களை பரீட்சைக்கு சிறந்த முறையில் தயார்படுத்த நாம் தயார்.
+எம்மோடு இணைந்து கொண்டு உங்களின் சிறந்த பெறுபேற்றினை உறுதிப்படுத்திக் கொள்ளுங்கள்.
 </p>
 
-<div class="cardgrid">
+<div class="cardgrid" style="margin-top:30px;">
 
-<div class="card">📘 Tamil Medium Teaching</div>
-<div class="card">🎯 Exam Focused Learning</div>
-<div class="card">📈 Result Improvement System</div>
+<div class="card">
+<h3>📘 Tamil Medium Teaching</h3>
+<p>Clear step-by-step explanation in Tamil for better understanding.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Exam Focused</h3>
+<p>Past papers, model questions and exam techniques.</p>
+</div>
+
+<div class="card">
+<h3>📈 Performance Growth</h3>
+<p>Structured learning system to improve marks quickly.</p>
+</div>
 
 </div>
 
 </section>
 
 <!-- CLASSES -->
-<section class="section" id="classes">
-
-<h2>📘 Classes</h2>
+<section class="section light" id="classes">
+<h2>📘 Classes Overview</h2>
 
 <div class="cardgrid">
 
-<div class="card">Theory Classes</div>
-<div class="card">Model Papers</div>
-<div class="card">Revision Sessions</div>
-
+<div class="card">
+<h3>📚 Theory Classes</h3>
+<p>Step-by-step Tamil explanation for all units.</p>
 </div>
 
+<div class="card">
+<h3>📝 Model Papers</h3>
+<p>Past paper discussions and exam preparation.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Revision</h3>
+<p>Fast revision sessions before exams.</p>
+</div>
+
+</div>
 </section>
 
 <!-- RECORDINGS -->
 <section class="section" id="recordings">
-
 <h2>📺 Recordings</h2>
 
 <div class="videos">
@@ -336,7 +323,7 @@ text-align:center;
 <iframe src="https://www.youtube.com/embed/OVhBwSa5O60"></iframe>
 <div class="video-info">
 <h4>Session 01</h4>
-<a class="watch-btn" href="#">▶ Watch Now</a>
+<a class="watch-btn" href="https://www.youtube.com/watch?v=OVhBwSa5O60" target="_blank">▶ Watch Now</a>
 </div>
 </div>
 
@@ -344,12 +331,19 @@ text-align:center;
 <iframe src="https://www.youtube.com/embed/r34xdzHNAgs"></iframe>
 <div class="video-info">
 <h4>Session 02</h4>
-<a class="watch-btn" href="#">▶ Watch Now</a>
+<a class="watch-btn" href="https://www.youtube.com/watch?v=r34xdzHNAgs" target="_blank">▶ Watch Now</a>
+</div>
+</div>
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/V01MgFYlB2Q"></iframe>
+<div class="video-info">
+<h4>Session 03</h4>
+<a class="watch-btn" href="https://www.youtube.com/watch?v=V01MgFYlB2Q" target="_blank">▶ Watch Now</a>
 </div>
 </div>
 
 </div>
-
 </section>
 
 <!-- LECTURER -->
@@ -365,9 +359,10 @@ text-align:center;
 
 <hr>
 
-<p>• 2024 A/L Rank 24</p>
+<h3>🎓 Qualifications</h3>
+<p>• 2024 A/L Ampara District Rank 24</p>
 <p>• 3 Years Experience</p>
-<p>• BSc (Hons) BIS</p>
+<p>• BSc (Hons) BIS – University of Sri Jayewardenepura</p>
 <p>• AAT Qualified</p>
 
 </div>
@@ -381,15 +376,18 @@ text-align:center;
 
 <p>© 2026 ZIMAR x ACCOUNTS</p>
 
+<div>
 <a href="#home">Home</a>
 <a href="#recordings">Recordings</a>
 <a href="#classes">Classes</a>
 <a href="#lecturer">Lecturer</a>
+<a href="#contact">Contact</a>
+</div>
 
 </footer>
 
 <!-- WHATSAPP -->
-<a class="float" href="#">💬</a>
+<a class="float" href="https://chat.whatsapp.com/IeXijrdITNM3JcZtlKkaeb?mode=gi_t">💬</a>
 
 </body>
 </html>
