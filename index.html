@@ -11,7 +11,7 @@
 body{
 margin:0;
 font-family:'Noto Sans Tamil',sans-serif;
-background:#f5f9ff;
+background:#f4f8ff;
 color:#1f2937;
 }
 
@@ -31,37 +31,368 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:12px 20px;
+flex-wrap:wrap;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 }
 
-.logo img{height:55px}
+.logo img{height:50px}
 
 nav a{
 text-decoration:none;
 color:#2563eb;
-margin-left:16px;
+margin:6px 10px;
 font-weight:bold;
+font-size:14px;
 }
 
 /* HERO */
 .hero{
-padding:100px 20px;
+padding:70px 20px;
 text-align:center;
 background:linear-gradient(135deg,#eaf4ff,#ffffff);
-overflow:hidden;
-position:relative;
 }
 
 .hero h1{
-font-size:50px;
-margin:0;
+font-size:clamp(26px,5vw,48px);
+margin:10px 0;
 }
 
+.hero p{
+font-size:clamp(14px,3.5vw,20px);
+}
+
+/* ANIMATION */
+.marquee{
+white-space:nowrap;
+overflow:hidden;
+width:100%;
+margin-bottom:15px;
+}
+
+.marquee span{
+display:inline-block;
+padding-left:100%;
+animation:move 18s linear infinite;
+font-weight:bold;
+color:#2563eb;
+}
+
+@keyframes move{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.badge{
+background:#2563eb;
+color:white;
+padding:8px 14px;
+border-radius:30px;
+font-weight:bold;
+font-size:13px;
+}
+
+/* SECTION */
+.section{
+max-width:1200px;
+margin:auto;
+padding:50px 15px;
+text-align:center;
+}
+
+/* GRID */
+.cardgrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:14px;
+padding:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+/* VIDEOS */
+.videos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:15px;
+}
+
+.video-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+iframe{
+width:100%;
+height:190px;
+border:none;
+}
+
+.video-info{
+padding:10px;
+text-align:left;
+}
+
+.watch-btn{
+display:inline-block;
+margin-top:6px;
+padding:8px 12px;
+background:#2563eb;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-size:13px;
+}
+
+/* LECTURER */
+.lecturer{
+display:flex;
+justify-content:center;
+padding:50px 15px;
+}
+
+.lect-card{
+display:flex;
+gap:20px;
+align-items:flex-start;
+max-width:900px;
+}
+
+/* IMAGE */
+.lect-card img{
+width:240px;
+height:300px;
+object-fit:cover;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+color:white;
+}
+
+footer a{
+color:white;
+margin:5px 8px;
+text-decoration:none;
+font-size:13px;
+}
+
+/* FLOAT */
+.float{
+position:fixed;
+right:15px;
+bottom:15px;
+background:#25D366;
+color:white;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+}
+
+/* 🔥 MOBILE RESPONSIVE */
+@media (max-width:768px){
+
+nav{
+justify-content:center;
+text-align:center;
+}
+
+nav a{
+margin:5px;
+font-size:13px;
+}
+
+.lect-card{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.lect-card img{
+width:90%;
+height:auto;
+max-height:350px;
+}
+
+.video-info{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<nav>
+<div class="logo">
+<img src="logo.png">
+<strong>ZIMAR x ACCOUNTS</strong>
+</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#recordings">Recordings</a>
+<a href="#classes">Classes</a>
+<a href="#lecturer">Lecturer</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="marquee">
+<span>🔥 Welcome to the most trustable online accounting classes | 📚 60+ Students | 🎓 50+ Sessions | 💯 Exam Focused Teaching</span>
+</div>
+
+<h1>ZIMAR x ACCOUNTS - TAMIL</h1>
+<p>Advance Level Tamil Medium Accounting Classes</p>
+
+<div class="stats">
+<div class="badge">👨‍🎓 60+ Students</div>
+<div class="badge">📚 50+ Sessions</div>
+<div class="badge">🏆 Trusted Platform</div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+
+<h2>🎓 நீங்கள் உயர்தரத்தில் வணிகப்பிரிவில் கணக்கீட்டு பாடத்தினை தெரிவு செய்த மாணவரா?</h2>
+
+<p>
+அப்படியானால் இது உங்களுக்கு ஒரு சிறந்த வாய்ப்பு. கணக்கீட்டு பாடத்தில் உள்ள அனைத்து தேர்ச்சிகளையும் சிறந்த முறையில் கற்பித்து உங்களை பரீட்சைக்கு சிறந்த முறையில் தயார்படுத்த நாம் தயார்.
+</p>
+
+<div class="cardgrid">
+
+<div class="card">📘 Tamil Medium Teaching</div>
+<div class="card">🎯 Exam Focused Learning</div>
+<div class="card">📈 Result Improvement System</div>
+
+</div>
+
+</section>
+
+<!-- CLASSES -->
+<section class="section" id="classes">
+
+<h2>📘 Classes</h2>
+
+<div class="cardgrid">
+
+<div class="card">Theory Classes</div>
+<div class="card">Model Papers</div>
+<div class="card">Revision Sessions</div>
+
+</div>
+
+</section>
+
+<!-- RECORDINGS -->
+<section class="section" id="recordings">
+
+<h2>📺 Recordings</h2>
+
+<div class="videos">
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/OVhBwSa5O60"></iframe>
+<div class="video-info">
+<h4>Session 01</h4>
+<a class="watch-btn" href="#">▶ Watch Now</a>
+</div>
+</div>
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/r34xdzHNAgs"></iframe>
+<div class="video-info">
+<h4>Session 02</h4>
+<a class="watch-btn" href="#">▶ Watch Now</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- LECTURER -->
+<section class="lecturer" id="lecturer">
+
+<div class="lect-card">
+
+<img src="lecturer.jpg">
+
+<div>
+<h2>MOHAMMETHU ZIMAR</h2>
+<p>Founder & Lecturer – A/L Accounting</p>
+
+<hr>
+
+<p>• 2024 A/L Rank 24</p>
+<p>• 3 Years Experience</p>
+<p>• BSc (Hons) BIS</p>
+<p>• AAT Qualified</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<p>© 2026 ZIMAR x ACCOUNTS</p>
+
+<a href="#home">Home</a>
+<a href="#recordings">Recordings</a>
+<a href="#classes">Classes</a>
+<a href="#lecturer">Lecturer</a>
+
+</footer>
+
+<!-- WHATSAPP -->
+<a class="float" href="#">💬</a>
+
+</body>
+</html>
 .hero p{
 font-size:20px;
 }
